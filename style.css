@@ -4,12 +4,13 @@
 
 body
 {
-	font-family: "Roboto";
+	font-family: "Roboto", sans-serif;
 }
 
 a
 {
 	display: inline-block;
+	text-decoration: none;
 }
 p
 {
@@ -19,19 +20,19 @@ p
 header
 {
 	background-color: white;
-	padding: 15px 0;
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	z-index: 2; /*cual es el nivel en el q esta en la pantalla, 1 es atras, 2 arriba, 3 mas arriba*/
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;/*cual es el nivel en el q esta en la pantalla, 1 es atras, 2 arriba, 3 mas arriba*/
 }
 
 header .container
 {
 	display: flex;
-	justify-content: space-between;
-	align-items: center;
+    justify-content: space-between;
+    align-items: center;
 }
 
 header .container .logo
@@ -45,12 +46,74 @@ header .container nav a
 	text-decoration: none;
 	margin: 0 15px;
 }
+header .container .hamb
+{
+	display: none; 
+}
+
+footer.seccion
+{
+	background-color: black;
+	color: white;
+	padding-bottom: 0;
+}
+
+footer .barra-footer
+{
+	background-color: grey;
+	text-align: center;
+	padding-right: 15px;
+	padding-left: 15px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+footer ul
+{
+	padding-left: 0;
+	list-style: none;
+	margin: 0;
+}
+
+footer .redes
+{
+	font-size: 25px;
+	display: flex;
+
+}
+
+footer .redes a
+{
+	margin: 0 7.5px;
+	
+}
+
+footer ul li
+{
+	margin-bottom: 10px;
+}
+footer .logo-footer
+{
+	width: 100%;
+}
+
+footer p
+{
+	color: white;
+	margin-bottom: 20px;
+}
+
+footer a
+{
+	
+}
 
 .boton
 {
 	text-align: center;
 	text-decoration: none;
 	padding: 15px 20px;
+	border: none;
 }
 
 .boton.boton-rojo
@@ -59,6 +122,20 @@ header .container nav a
 	background-color: red;
 	font-size: 20px;
 	font-weight: bold;
+}
+
+.boton.boton-negro
+{
+	color: white;
+	background-color: black;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.boton.boton-negro:hover
+{
+	color: black;
+	background-color: white;
 }
 
 .boton.boton-blanco
@@ -99,6 +176,15 @@ header .container nav a
 	margin: 0 auto;
 	padding-right: 15px;
 	padding-left: 15px;
+	position: relative;
+}
+
+.container-fluid	/*aqui se corrigió el scroll horizontaa*/
+{
+	width: 100%;
+	padding-right: 15px;
+	padding-left: 15px;
+	position: relative;
 }
 
 .row
@@ -115,21 +201,49 @@ header .container nav a
 	padding-left: 15px;
 }
 
+.columna-25
+{
+	width: 25%;
+}
+
 .columna-33
 {
 	width: 33.33%;
+}
+
+.columna-50
+{
+	width: 50%;
+}
+
+.empujar-50
+{
+	margin-left: 50%;
+}
+
+.columna-41
+{
+	width: 41.66%;
+}
+
+.empujar-68
+{
+	margin-left: 68%;
+}
+
+.empujar-66
+{
+	margin-left: 66.33%;
+}
+.empujar-0
+{
+	margin-left: 0;
 }
 
 #inicio
 
 {
 	position: relative;
-}
-
-#inicio img
-{
-	width: 100%;
-	display: block;
 }
 
 #inicio img
@@ -202,4 +316,125 @@ header .container nav a
 {
 	margin-top: 0;
 	font-size: 25px;
+}
+
+#galeria
+{
+
+}
+
+#galeria h4
+{
+	padding-right: 15px;
+	padding-left: 15px;
+	text-align: center;
+	position: absolute;
+	top: 40%;
+	color: white;
+	font-size: 18px;
+	width: 100%;
+}
+
+#galeria img
+{
+	filter: grayscale(1); /*scala de blanco y negro para las imagenes*/
+}
+
+#galeria .cuadrado-perfecto:hover img
+{
+	filter: grayscale(0); /*pasar el mouse por la imagen se quita el blanco y negro*/
+}
+
+#galeria .cuadrado-perfecto:hover h4
+{
+	display: none; /*pasar el mouse por la imagen se quita el texto*/
+}
+
+#contactenos
+{
+	position: relative;
+}
+
+#contactenos iframe
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	/*filter: grayscale(1);*/
+}
+
+#contactenos form
+{
+	padding: 60px;
+	background-color: red;
+}
+
+#contactenos form .form-block
+{
+	width: 100%;
+	margin-bottom: 15px;
+}
+
+#contactenos form .form-block .form-control
+{
+	display: block;
+	height: 40px;
+	font-size: 16px;
+	border: 1px solid grey;
+	width: 100%;
+	padding: 5px 10px;
+}
+
+#contactenos form .form-block textarea
+{
+	display: block;
+	height: 100px;
+	font-size: 16px;
+	border: 1px solid grey;
+	width: 100%;
+	padding: 5px 10px;
+}
+
+#contactenos form .form-block.bloque-ultimo
+{
+	margin-bottom: 0;
+}
+
+@media(max-width: 767px)
+{
+	.container
+	{
+		width: 100%;
+	}
+	header .container nav
+	{
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		background-color: white;
+		padding-top: 80px;
+		padding-bottom: 80px;
+		padding-left: 15px;
+		padding-right: 15px; 
+		top: 0;
+		left: 0;
+		display: flex;
+		flex-direction: column;
+		transition: all 0.4s ease;/*0.4 es el tiempo en segundos*/
+		transform: translateX(100%);
+	}
+
+	header .container nav a
+	{
+		font-size: 30px;
+		margin: 15px 0;
+	}
+	header .container .hamb
+	{
+		display: block; 
+		font-size: 40px;
+		color: white;
+	}
 }
